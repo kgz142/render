@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2f33;
+    color: white;
+    overflow: hidden;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #23272a;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.container-inicial,
+.container-form {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c2f33;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.container-inicial {
+    display: flex;
+}
+
+.container-input-inicial,
+.container-input {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha em telas pequenas */
+}
+
+.container-input-inicial input,
+.container-input input {
+    width: 80%;
+    padding: 10px;
+    background-color: #444b54;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    outline: none;
+}
+
+.container-input-inicial button,
+.container-input button {
+    width: 15%;
+    padding: 10px;
+    background-color: #7289da;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container-input-inicial button:hover,
+.container-input button:hover {
+    background-color: #677bc4;
+}
+
+.container-form .response {
+    width: 100%;
+    max-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    overflow-y: auto;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #444b54;
+    border-radius: 8px;
+}
+
+.response p {
+    align-self: flex-end;
+    background-color: #7289da;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.response span {
+    align-self: flex-start;
+    background-color: #2c2f33;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#recomecar {
+    padding: 10px;
+    background-color: #23272a;
+    color: white;
+    border-radius: 8px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+#recomecar:hover {
+    background-color: #40444b;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .chat-container {
+        padding: 15px;
+        max-width: 90%;
+    }
+
+    .container-input-inicial input,
+    .container-input input {
+        width: 70%; /* Ajusta a largura dos inputs */
+    }
+
+    .container-input-inicial button,
+    .container-input button {
+        width: 25%; /* Ajusta a largura dos botões */
+    }
+
+    #recomecar {
+        top: 5px;
+        left: 5px;
+        padding: 8px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .chat-container {
+        max-width: 70%; /* Para tablets */
+    }
+
+    .container-input-inicial input,
+    .container-input input {
+        width: 80%;
+    }
+
+    .container-input-inicial button,
+    .container-input button {
+        width: 15%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .chat-container {
+        max-width: 500px; /* Para desktops */
+    }
+}
